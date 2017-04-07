@@ -1,13 +1,38 @@
-Treść zadania z kursu programowania w języku Python:
+# musictranslator
+Translate some great poems to fantastic classical music!
 
-Uporczywe narkotyczne melodie potrafią czasem na długo przylgnąć do umysłu.
-Napisz program, który generuje narkotyczne melodie. Program powinien generować różne melodie w zależności od tego, jakie użytkownik poda opcje. Użytkownik będzie tak długo modyfikował opcje programu aż wygenerowana melodia utkwi mu na stałe w głowie.
+## How to use
 
-Melodie te powinny być generowane w postaci plików midi i zapisywane na dysku twardym, przy czym użytkownik powinien mieć możliwość podania lokalizacji. Obsługa karty dźwiękowej w celu odtworzenia wygenerowanej melodii nie jest konieczna. Można użyć dowolnej biblioteki do obslugi formatu midi, przykladowo https://pypi.python.org/pypi/miditime
+```shell
+> python run.py -o output.mid
+> python run.py -o output.mid --poem poems\Erlkonig.txt --lang German --rhythm dynamic  --scale MINOR --chords 1
+```
 
+```
+usage: run.py [-h] [--lang LANG] [-o O] [--poem POEM] [--gama {1,2}]
+              [--rhythm {cut,dynamic}] [--scale {MINOR,MAJOR}] [-l]
+              [--chords {0,1,2,3,4,5,6,7,8}]
 
-Program ten powinien wykorzystywać następujące elementy:
- - klasy
- - funkcje
- - parsowanie argumentów linii poleceń za pomocą modułu argparse ze standardowej biblioteki
- - zewnętrzna biblioteka do obsługi formatu midi
+parse poems to melancholic, narcotic midi!
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --lang LANG           languages: English, French, German, Spanish,
+                        Portuguese, Italian, Turkish, Swedish, Polish, Dutch,
+                        Danish, Icelandic, Finnish, Czech
+  -o O                  output file name
+  --poem POEM           a file with your poem
+  --gama {1,2}          how wide (in octaves) the gama should be?
+  --rhythm {cut,dynamic}
+                        if you prefer brainwashing music choose dynamic
+  --scale {MINOR,MAJOR}
+                        if happy choose minor, otherwise choose minor
+  -l                    if pitch is to high
+  --chords {0,1,2,3,4,5,6,7,8}
+                        higher int sparser chords
+```
+
+## Requirements
+
+-Python 3.6
+-miditime 1.1.3

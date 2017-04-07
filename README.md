@@ -34,5 +34,5 @@ optional arguments:
 
 ## Requirements
 
--Python 3.6
--miditime 1.1.3
+ - Python 3.6
+ - miditime 1.1.3
